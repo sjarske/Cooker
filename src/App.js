@@ -1,24 +1,17 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import Game from './game';
 
 function App() {
+  const [showImage, setShowImage] = useState(false);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {
+        showImage ? <Game />  : <img onClick={() => setShowImage(!showImage)} className="myimage" src="https://www.addictinggames.com/sites/default/files/styles/homepage_views_style/public/fast-arrow.jpg" alt=""  /> 
+      }
+        
     </div>
+    
   );
 }
 
